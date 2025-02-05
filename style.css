@@ -1,0 +1,168 @@
+:root {
+    --primary-color: #007BFF;
+    --secondary-color: #4CAF50;
+    --background-color: #f4f7fc;
+    --text-color: #333;
+    --border-color: #ddd;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px var(--shadow-color);
+}
+
+h2 {
+    text-align: center;
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+    margin-right: 10px;
+    color: var(--text-color);
+}
+
+select {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+select:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+#qr-reader {
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    margin-bottom: 20px;
+}
+
+.attendance-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 0;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px var(--shadow-color);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.attendance-card select {
+    width: 120px;
+    margin-bottom: 0;
+}
+
+.attendance-card input[type="time"] {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+.attendance-card input[type="time"]:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+button {
+    padding: 12px;
+    background-color: var(--secondary-color);
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#start-scanning {
+    background-color: var(--primary-color);
+}
+
+#start-scanning:hover {
+    background-color: #0069d9;
+}
+
+#submit-attendance {
+    display: block;
+    margin: 20px auto;
+}
+
+#student-list:empty::before {
+    content: "Please select a class to view students.";
+    display: block;
+    text-align: center;
+    color: #888;
+    font-style: italic;
+    margin-top: 20px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    .attendance-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .attendance-card select,
+    .attendance-card input[type="time"] {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    #start-scanning,
+    #submit-attendance {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    #start-scanning {
+        margin-right: 0;
+    }
+}

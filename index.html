@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance System</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Include Html5-QRCode library -->
+    <script src="https://unpkg.com/html5-qrcode"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>Mark Student Attendance</h2>
+
+        <!-- Class Selection Dropdown -->
+        <label for="class-select">Select Class:</label>
+        <select id="class-select">
+            <option value="">--Select Class--</option>
+            <option value="class1">Class 1</option>
+            <option value="class2">Class 2</option>
+            <option value="class3">Class 3</option>
+        </select>
+
+        <!-- Start Scanning Button -->
+        <button id="start-scanning" style="display: none;">Start Scanning</button>
+
+        <!-- QR Code Scanner Section -->
+        <div id="qr-reader" style="width: 100%; margin: 20px 0; display: none;"></div>
+
+        <!-- Attendance Form -->
+        <form id="attendance-form">
+            <div id="student-list">
+                <!-- Student cards will be dynamically added here -->
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" id="submit-attendance">Submit Attendance</button>
+        </form>
+    </div>
+
+    <!-- JavaScript File -->
+    <script src="script.js"></script>
+</body>
+</html>
